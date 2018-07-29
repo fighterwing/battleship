@@ -1,24 +1,28 @@
 #define ROWS 12
 #define COLS 12
-#define U_NUM 1
+#define NUM_U 1
 
-enum type { HUMAN, CPU, JUDGE };
+#include "entities.h"
 
-const char * unit_name[U_NUM] = { "destroya" };
-struct tile * game_map[ROWS][COLS];
+enum com_type { HUMAN, CPU, JUDGE };
+const char * unit_names[NUM_U] = { "destroya" };
 
-struct commander {
-};
+void build_fleet( void ) {
 
+}
 
-struct judge {
-};
+void build_map( void ) {
 
+}
 
-struct unit {
-};
+void build_commander( void ) {
 
+}
 
-struct tile {
-};
+void destroy_commander( void ) {
 
+}
+
+void destroy_map( void ) {
+
+}

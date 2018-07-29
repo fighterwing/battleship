@@ -1,20 +1,19 @@
-#ifndef STD_H
-#define STD_H
+#include "combat.h"
+#include "controller.h"
+#include "entities.h"
 
 #include <stdio.h>
-#include <stdlib.h>
 
-#endif
+struct judge randall;
 
-static void place_ships( void ) {
-    printf( "\ninside place ships\n" );
+void initialize( void ) {
+    build_fleet();
+    build_commander();
+    build_commander();
+    build_map();
+    engage();
 }
 
 void play( void ) {
-    printf( "\nwe are in play cycle\n" );
-}
-
-void initialize( void ) {
-    printf( "\nWe are in init_cycle\n" );
-    place_ships();
+    printf( "\nwe are in playing the game\n" );
 }
