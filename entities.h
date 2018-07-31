@@ -1,38 +1,31 @@
-/* SUMMARY: Entities will have the objects of the game. Build/destroy
- * functions for the objects are here as well. The map is made of tiles
- * and a fleet is made of units.
+/* FUNCTIONS
+ * build_object   : Initializes an object based on the enum obj_type given.
+ * destroy_object : Accept an enum obj_type and frees the given object.
+ *
+ * STRUCTS
+ * unit      : Unit has boat data that is loaded into a commanders fleet.
+ * tile      : Tile is a component of a commanders grid. Tiles are loaded into the commanders grid array.
+ * commander : Commander is the player. He owns a fleet of units and has a grid of tiles. In combat he uses his strike attack.
+ * judge     : Judge talks to the program user through text and tells the canvas what to draw.
+ *
+ * VARIABLES
+ * obj       : enum obj_type passes into build_object and tells it what to build.
+ * judicator : There is only one judge in the game. He will interact with the program user/canvas across source files.
  */
 
 #ifndef ENTITIES_H
 #define ENTITIES_H
+#include <stdbool.h>
 
-extern void build_fleet( void );
-extern void build_map( void );
-extern void build_commander( void );
-extern void destroy_commander( void );
-extern void destroy_map( void );
+const extern enum obj_type { HUMAN, CPU, JUDGE, FLEET, GRID } obj;
+extern struct judge * judicator;
+
+extern void build_object( int );
+extern void destroy_object( int );
 
 struct unit;
 struct tile;
 struct commander;
+struct judge;
 
-extern struct judge randall;
-extern struct tile *** game_map;
-
-struct unit {
-    const char * name;
-};
-
-struct tile {
-    
-};
-
-struct commander {
-    struct unit ** fleet;
-};
-
-struct judge {
-    int jud;
-    float t;
-};
 #endif /* ENTITIES_H */

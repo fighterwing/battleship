@@ -6,7 +6,6 @@
 int main( int argc, const char ** argv )
 {
     initialize();
-    play();
 
     printf( "\npress enter to exit..." );
     getchar();

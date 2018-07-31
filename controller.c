@@ -4,14 +4,14 @@
 
 #include <stdio.h>
 
-struct judge randall;
+struct judge * judicator;
+struct tile *** grid;
 
 void initialize( void ) {
-    build_fleet();
-    build_commander();
-    build_commander();
-    build_map();
+    build_object( 0 );
+    destroy_object( 0 );
     engage();
+    play();
 }
 
 void play( void ) {
