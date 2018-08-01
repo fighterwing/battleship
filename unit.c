@@ -22,11 +22,7 @@ static void fleet_morph( void ) {
 static void grid_morph( void ) {
 
 }
-void build_fleet( int ) {
-
-}
-
-void build_fleet( int ) {
+void morph( int ) {
 
 }
 
@@ -34,27 +30,15 @@ void relay( void ) {
 
 }
 
-void beacon( void ) {
-
-}
-
-struct tile {
+struct unit {
     int state;
     char ** code;
 };
 
-struct unit {
-    char ** label;
-    struct tile ** t;
-};
-
 struct cluster {
-    int type;
+    int form;
+    struct unit ** u;
     char ** label:
-    union {
-        struct unit ** u;
-        struct tile ** t;
-    };
 };
 
 struct commander {
