@@ -3,10 +3,22 @@
 
 #include <stdio.h>
 
-void engage( void ) {
+static void control( void );
+static void engage( void );
+static void bombard( void );
+static void surrender( void );
+
+static void control( void ) {
+
+}
+static void engage( void ) {
     printf( "\nwe are placing the fleet!\n" );
 }
 
-void attack( void ) {
+static void bombard( void ) {
+
+}
+
+static void surrender( void ) {
 
 }

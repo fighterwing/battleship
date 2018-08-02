@@ -8,7 +8,6 @@
 #ifndef COMBAT_H
 #define COMBAT_H
 
-extern void engage( void );
-extern void attack( void );
+extern void relay( void );
 
 #endif /* COMBAT_H */
