@@ -2,22 +2,22 @@
 #include <stdlib.h>
 
 #include "controller.h"
+#include "test.h"
 
-const enum c_type { FLEET, GRID } c;
-void funk( enum c_type );
+void testfunction (void);
+struct urg {
+    int i;
+};
 
 int main( int argc, const char ** argv )
 {
-//    initialize();
-    funk( c );
-
-
+    char a[] = "4";
 
     printf( "\npress enter to exit..." );
     getchar();
     exit( EXIT_SUCCESS );
 }
 
-void funk( enum c_type c ) {
+void testfunction (void) {
 
 }

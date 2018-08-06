@@ -13,16 +13,21 @@
  */
 
 #ifndef CLUSTER_H
-#define CLUSTER_H
+#define CLUSTER_H 1
 
-extern const enum cluster_t { FLEET, GRID } c_type;
-extern const enum tile_s { EMPTY, FULL, DEAD } t_state;
+#include "protocol.h"
 
 struct tile;
 struct ship;
 struct cluster;
 
-extern struct cluster * build( enum cluster_t );
-extern void destroy( struct cluster * );
+extern struct cluster * build (enum cluster_p);
+extern void destroy (struct cluster *);
+extern void relay (struct * warship, enum command_p);
+
+extern void phrase (struct * warship);
+
+extern void bombard (void);
+extern void engage (void);
 
 #endif /* CLUSTER_H */

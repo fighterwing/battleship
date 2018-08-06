@@ -1,10 +1,10 @@
-OBJECTS = main.o entities.o canvas.o combat.o \
+OBJECTS = main.o command.o canvas.o combat.o \
           controller.o
 
 default : battleship
 
 main.o : main.c
-entities.o : entities.c entities.h
+command.o : command.c command.h protocol.h
 canvas.o : canvas.c
 combat.o : combat.c combat.h
 controller.o : controller.c controller.h

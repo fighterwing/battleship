@@ -1,20 +1,25 @@
-/*FUNCTIONS
- * assign  : builds a head 
- * destroy :
+/* FUNCTIONS
+ * build   : Builds a chief structure based on the chief protocol given.
+ * command : Executes a command based on the command protocol and chief structure given.
+ * destroy : Frees the chief from duty (and memory).
  *
+ * STRUCTS
+ * chief   : Is used to execute commands
  */
 
-
-
-
 #ifndef COMMAND_H
-#define COMMAND_H
+#define COMMAND_H 1
 
-extern enum const h_type { HUMAN, CPU, JUDGE } head_t;
+#include "protocol.h"
 
-extern struct head * assign( enum h_type );
-extern void destroy( struct head * );
+struct head;
 
+extern struct head * build (enum head_p ch);
+extern void command (enum command_p, struct head *);
+// extern void classify (struct warship *, struct head *);
+// extern void relay (void);
+extern void destroy (struct head *);
 
+/* classify? assign? group? */
 
 #endif /* COMMAND_H */

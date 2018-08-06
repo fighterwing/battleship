@@ -13,7 +13,7 @@ struct head {
 static char *** build_codes (void) {
 
 }
-void relay (enum command_p cmd, struct head * h) {
+void command (enum command_p cmd, struct head * h) {
 
 }
 struct head * build (enum head_p type) {
