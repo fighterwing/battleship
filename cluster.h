@@ -25,7 +25,8 @@ extern struct cluster * build (enum cluster_p);
 extern void destroy (struct cluster *);
 extern void relay (struct * warship, enum command_p);
 
-extern void phrase (struct * warship);
+extern void phrase (enum action_p, struct warship *);
+extern void update (struct warship *, 
 
 extern void bombard (void);
 extern void engage (void);

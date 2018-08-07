@@ -1,0 +1,143 @@
+modules. units are modules. the core has components attached to it. a commander
+is made of components attached to a core. everything is made from a core. how?
+everything has a name. names are used in logic to add components. how to
+attach components to a core?
+
+common data is used by cores that need them.
+grid locations are used by: tiles, units, commander strikes
+components have booleans: hit, sunk, occupied.
+what is an array of units? : units have tile locations and take up X number
+of tile locations. Booleans define the tile status: hit, occupied, sunk
+a grid is an array of tiles. a unit is an array of tiles
+whats a commander? : a commander is a core, his code is his name.
+building objects: pass a core, say what to make it
+a unit has a code AND a name.
+does fleet have a name? does grid have a name?
+does commander have a name?
+cores need a "top" or "head" exclusive data.
+something that defines them but is unique.
+if a boat has a length of 4, it's made of
+4 cores, where do i store its size? all the
+cores must point to it.
+
+
+i need to point to a group of cores to say
+that it's owned by somebody. The pointer just
+identifies who owns it. I could say 
+MYPOINT->fleet
+MYPOINT->grid
+MYPOINT->strike
+
+FLEET->unit
+commander core must point to his array of cores
+super cores manage core arrays
+
+super cores own things. Commanders own fleets/grids
+fleets own units
+grids are made of tile cores
+grids are an array of tile cores
+grids are a collection of cores
+grid eye
+fleets are made of unit cores
+
+NOT SUPER, JUST DIFFERENT. commanders just command,
+they don't own, or inherit. They direct and
+instruct. how to command
+the judge , a third party that assigns data for
+command usage.
+third party that manages core arrays
+third party assigns data for command
+third party encapsulates core arrays
+module functions handle cores
+a structure of function pointers for another module
+
+
+judge uses canvas by pointing its functions to draw functions.
+data just needs to be fetched. Don't need to own it.
+eye handles super core data logic and is able to access it.
+eye needs to handle data for 3 super cores: commander, fleet, grid
+
+
+units are arrays of tiles with names and a length.
+clusters are arrays of tiles or arrays of units.
+
+a GRID is a cluster of tiles.
+a FLEET is a cluster of units.
+
+a commander COMMANDS : CLUSTER
+a judge COMMANDS     : DRAW and PHRASE
+
+there is a command property
+judge commands by using function pointers to extern functions draw/phrase
+judge gives draw a code. draw will follow the code.
+
+commander commands by ...?
+
+clusters must follow a code. The code tells them what to do. 
+i.e : An engage code to position
+
+commander has a function pointer to relay.
+commander must have charge of clusters.
+clusters must have a commander
+commanders must have clusters
+
+Command sends a combat code to relay.
+Command sends an engage code to relay.
+
+
+
+judge will use a function pointer and a code. He will send his code into
+the function he points to.
+command( CODE );
+
+
+sending a function ENGAGE code.
+function needs ENGAGE code and commander
+
+cluster needs to know head
+head must be designated to a cluster
+
+we initialize a bunch of boats
+where are they stored?
+we must have a structure for each ship.
+or must we?
+
+boats occupy tiles. command only knows
+where they are on the grid.
+
+
+struct cluster * u;
+struct cluster * u2;
+struct cluster * u3;
+struct cluster * u4;
+
+only other hierarchy is a function
+com1->command( CONTROL, code );
+
+fleet->unit[5]->health;
+fleet->unit[1]->label;
+
+how many players? 2
+
+if ( something ) {
+assign( HUMAN );
+build( GRID );
+build( FLEET );
+};
+else if ( something ) {
+assign( CPU );
+build( GRID );
+build( FLEET );
+}
+
+assign commander func pointer to a cluster
+joint function. 
+how do i init a fleet/grid, but keep them
+together?
+
+
+the build function is the loader. we load the
+clusters. static clusters will be loaded when
+we come back. we use the data whenever we come
+back. only HEAD has access to the data.
+

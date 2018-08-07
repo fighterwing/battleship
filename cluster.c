@@ -25,15 +25,12 @@ const char * labels [F_SIZE+1] =
 };
 
 /* STRUCTS **************************************************************/
-struct tile {
-    enum tile_p state;
-    char ** code;
-};
 
 struct warship {
-    char ** label;
+    char * label;
     int health;
     int length;
+    char * target;
     char ** loc;
 };
 
@@ -46,14 +43,7 @@ struct cluster {
     };
 };
 
-/* STATIC_FUNCTIONS *****************************************************/
-static void build_grid( void ) {
 
-}
-
-static void build_fleet (void) {
-
-}
 
 /* EXTERN_FUNCTIONS *****************************************************/
 struct cluster * build (enum cluster_t c_type) {
@@ -62,7 +52,11 @@ struct cluster * build (enum cluster_t c_type) {
 void destroy (struct cluster * c) {
 
 };
-/*
+/* struct tilemap * radar;
+ * struct tilemap * grid;
+ * struct battery * navy;
+ * tmap id;
+ *
  * there are 2 grids per "player"
  * heads send commands to grids???
  * heads can see grids.
@@ -80,41 +74,13 @@ void destroy (struct cluster * c) {
  * draw command is relayed to the canvas target
  * canvas performs the draw command
  *
- * bombard target - target is enemy warship.
- * engage target - target is a game grid.
+ * bombard target - target is a tilemap.
+ * engage target - target is a tilemap
  *
- * canvas target - target is a drawing (function call)
- * phrase target - target is a phrase (function call)
+ * order (enum command_p, struct tilemap *);
  *
- * command takes order and head.
- * head relays the command based on his data.
- * i.e. PHRASE command 
- * DRAW command
- * relay sends
- *
- *
- *
- *
- * head gives the command engage/bombard with a target
- * command/target is relayed (with a code?)
- * fleets use relays? canvas use relays? warships use relays?
- * to the warship target(s)
- * warship(s) perform the bombard command.
- *
- * so, warships bombard by targeting a location.
- * judge commands
- * results are relayed 
- *
- * warships have a target
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * void bombard (struct tilemap * target, char * location) {
+ *    each player requires 2 tilemaps.
+ *    each player requires 1 battery of warships.
+ *    each player requires 1 head.
  */
